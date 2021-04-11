@@ -41,6 +41,7 @@ public class SimplePistol extends JavaPlugin implements Listener {
         loadValues();
         loadSound();
         getServer().getPluginManager().registerEvents(this,this);
+        getCommand("simplepistol").setExecutor(new SimplePistolCommand(this));
 
     }
     private void loadConfig(){
@@ -140,6 +141,11 @@ public class SimplePistol extends JavaPlugin implements Listener {
             loc.add(line);
             world.spawnParticle(toUse, loc, 0);
         }
+    }
+    public void reloadData(){
+        reloadConfig();
+        loadValues();
+        loadSound();
     }
 
 }
