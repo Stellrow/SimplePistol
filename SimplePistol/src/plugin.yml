@@ -1,0 +1,5 @@
+name: SimplePistol
+author: Stellrow
+version: 1.0
+api-version: 1.13
+main: ro.Stellrow.SimplePistol.SimplePistol

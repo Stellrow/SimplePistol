@@ -1,0 +1,12 @@
+General:
+  gunType: WOODEN_HOE
+  ammoType: IRON_NUGGET
+  shotCooldownTicks: 14
+  damage: 18.0
+  distanceInBlocks: 10
+  particle: CRIT
+Sound:
+  play: true
+  soundToPlay: ENTITY_GENERIC_EXPLODE
+  volume: 0.3
+  pitch: 3.5

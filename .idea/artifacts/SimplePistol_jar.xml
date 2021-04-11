@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SimplePistol:jar">
+    <output-path>$USER_HOME$/Desktop/development/servers/fresh/bukkitplugins1.16.5/plugins</output-path>
+    <root id="archive" name="SimplePistol.jar">
+      <element id="module-output" name="SimplePistol" />
+    </root>
+  </artifact>
+</component>
