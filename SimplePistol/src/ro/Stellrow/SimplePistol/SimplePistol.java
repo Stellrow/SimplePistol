@@ -2,6 +2,7 @@ package ro.Stellrow.SimplePistol;
 
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,6 +28,7 @@ public class SimplePistol extends JavaPlugin implements Listener {
     private double damage;
     private int distance;
     private Particle particle;
+    private boolean affectPlayer;
     //Sound
     private boolean playSound;
     private Sound sound;
@@ -65,6 +67,7 @@ public class SimplePistol extends JavaPlugin implements Listener {
         cooldownTime = getConfig().getInt("General.shotCooldownTicks",14);
         damage = getConfig().getDouble("General.damage",18.0);
         distance = getConfig().getInt("General.distanceInBlocks",10);
+        affectPlayer = getConfig().getBoolean("General.affectPlayers",true);
     }
     private void loadSound(){
         try{
@@ -103,6 +106,9 @@ public class SimplePistol extends JavaPlugin implements Listener {
             Entity hit = result.getHitEntity();
             if (hit!=null) {
                 if (hit instanceof LivingEntity) {
+                    if (hit.getType()==EntityType.PLAYER&&!affectPlayer){
+                        spawnParticleLine(player.getLocation(),particle);
+                    }
                     ((LivingEntity) hit).damage(damage);
                     spawnParticleLine(player.getLocation(), particle, hit.getLocation());
                 }

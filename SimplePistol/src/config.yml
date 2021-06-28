@@ -5,6 +5,7 @@ General:
   damage: 18.0
   distanceInBlocks: 10
   particle: CRIT
+  affectPlayers: true
 Sound:
   play: true
   soundToPlay: ENTITY_GENERIC_EXPLODE
